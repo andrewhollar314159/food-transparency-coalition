@@ -133,9 +133,13 @@
   .story p { margin: 6px 0 0; font: 400 15px/1.5 var(--sans); color: #666; }
 
   /* Coalition */
-  .members { margin: 32px 0 0; padding: 0; list-style: none; display: flex; justify-content: center; align-items: center; gap: clamp(12px,2vw,20px); flex-wrap: wrap; }
-  .members li { display: flex; align-items: center; gap: 12px; border: 1px solid #e2ded5; border-radius: 12px; padding: clamp(14px,2vw,18px) clamp(18px,3vw,28px); font: 600 16px var(--sans); }
-  .members .logo { width: 36px; height: 36px; border-radius: 8px; background: repeating-linear-gradient(45deg,#eee,#eee 4px,#f7f7f5 4px,#f7f7f5 8px); display: inline-block; }
+  .members { margin: 32px 0 0; padding: 0; list-style: none; display: flex; justify-content: center; align-items: stretch; gap: clamp(12px,2vw,20px); flex-wrap: wrap; }
+  .members li { display: flex; }
+  .members li > a { display: flex; align-items: center; gap: 12px; border: 1px solid #e2ded5; border-radius: 12px; padding: clamp(14px,2vw,18px) clamp(18px,3vw,28px); font: 600 16px var(--sans); transition: border-color 0.15s ease, background-color 0.15s ease; }
+  .members li > a:hover, .members li > a:focus-visible { opacity: 1; border-color: var(--green); background: #fbfaf7; }
+  .members .logo { flex: none; width: 36px; height: 36px; border-radius: 8px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--sand-line); display: inline-flex; align-items: center; justify-content: center; overflow: hidden; font: 800 15px var(--sans); color: var(--green); }
+  .members .logo::before { content: attr(data-mark); }
+  .members .logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
   /* Final CTA + footer */
   .final { background: var(--night); color: #f4f2ed; padding: clamp(64px,9vw,100px) clamp(20px,5vw,80px) clamp(64px,9vw,96px); text-align: center; }
@@ -313,12 +317,19 @@
   <!-- ── Coalition ────────────────────────────────────── -->
   <section id="coalition" style="padding:clamp(48px,6vw,64px) clamp(20px,5vw,80px); text-align:center;">
     <h2 style="margin:0; font:700 13px var(--sans); letter-spacing:0.12em; color:#999;">THE COALITION</h2>
+    <!--
+      Each member links to that organization's own site.
+      The little tile is a placeholder initial until we have real logo files.
+      To use a real logo: put the file in /assets/logos/ and swap the data-mark
+      attribute for an image, e.g.
+        <span class="logo" aria-hidden="true"><img src="/assets/logos/fig.svg" alt=""></span>
+    -->
     <ul class="members">
-      <li><span class="logo" aria-hidden="true"></span>Fig: Food is Good</li>
-      <li><span class="logo" aria-hidden="true"></span>Alpha-gal Foundation</li>
-      <li><span class="logo" aria-hidden="true"></span>MenuTrinfo</li>
-      <li><span class="logo" aria-hidden="true"></span>Alpha-gal Alliance Action Fund</li>
-      <li><span class="logo" aria-hidden="true"></span>Allergen Free Cooking</li>
+      <li><a href="https://foodisgood.com/" target="_blank" rel="noopener"><span class="logo" data-mark="F" aria-hidden="true"></span>Fig: Food is Good</a></li>
+      <li><a href="https://www.alphagalfoundation.org/" target="_blank" rel="noopener"><span class="logo" data-mark="α" aria-hidden="true"></span>Alpha-gal Foundation</a></li>
+      <li><a href="https://menutrinfo.com/" target="_blank" rel="noopener"><span class="logo" data-mark="M" aria-hidden="true"></span>MenuTrinfo</a></li>
+      <li><a href="https://alphagalaction.org/" target="_blank" rel="noopener"><span class="logo" data-mark="α" aria-hidden="true"></span>Alpha-gal Alliance Action Fund</a></li>
+      <li><a href="https://www.allergenfreecooking.com/" target="_blank" rel="noopener"><span class="logo" data-mark="A" aria-hidden="true"></span>Allergen Free Cooking</a></li>
     </ul>
   </section>
 
