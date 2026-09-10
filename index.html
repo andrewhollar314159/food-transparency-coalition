@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every. Single. Ingredient. | Food Transparency Coalition</title>
+<meta name="description" content="We’re asking the FDA to require full disclosure of every ingredient and processing aid in packaged food, published in a free public database. Add your voice.">
+<meta name="theme-color" content="#1c1a16">
+
+<!-- Share previews (iMessage, Slack, LinkedIn, Facebook, X) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Food Transparency Coalition">
+<meta property="og:title" content="Every. Single. Ingredient.">
+<meta property="og:description" content="Tell the FDA: every ingredient and processing aid should be disclosed, in a free public database anyone can check.">
+<meta property="og:image" content="/assets/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Every. Single. Ingredient. Food Transparency Coalition">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Every. Single. Ingredient.">
+<meta name="twitter:description" content="Tell the FDA: every ingredient and processing aid should be disclosed, in a free public database anyone can check.">
+<meta name="twitter:image" content="/assets/share-card.jpg">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=Archivo+Narrow:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #111; --paper: #fcfcfa; --cream: #f7f4ee; --night: #1c1a16;
+    --green: #0c6b4a; --green-deep: #0e3d2e;
+    --rust: #b8452c; --rust-deep: #8f3520; --rust-wash: #fbe9e4; --rust-line: #e8b7a9;
+    --line: #e5e5e0; --sand-line: #e3ddd1;
+    --sans: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.75; }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 2px; }
+  [id] { scroll-margin-top: 12px; }
+  .skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 16px; z-index: 10; font: 700 14px var(--sans); }
+  .skip:focus { left: 8px; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* Shared type */
+  .eyebrow { font: 700 13px var(--sans); letter-spacing: 0.12em; color: var(--green); margin: 0; }
+  .h2 { margin: 12px 0 0; font: 900 clamp(32px,5vw,44px)/1.1 var(--sans); letter-spacing: -0.025em; }
+  .lede { font: 400 clamp(16px,2vw,18px)/1.6 var(--sans); color: #555; }
+  .section { padding: clamp(48px,7vw,76px) clamp(20px,5.5vw,80px); }
+  .cream { background: var(--cream); }
+
+  /* Header */
+  .site-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 24px; padding: clamp(16px,3vw,26px) clamp(20px,5vw,56px); }
+  .brand { font: 700 17px var(--sans); }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 12px clamp(18px,3vw,36px); font: 400 15px var(--sans); }
+
+  /* Buttons */
+  .btn { display: inline-block; font: 700 16px var(--sans); padding: 17px 38px; background: var(--ink); color: #fff; transition: background .15s, opacity .15s; }
+  .btn:hover { opacity: 1; background: #333; }
+  .btn-light { background: #f4f2ed; color: var(--night); padding: 20px clamp(32px,4vw,52px); font-size: 18px; }
+  .btn-light:hover { background: #fff; }
+  .btn-ghost { background: transparent; color: #f4f2ed; border: 1.5px solid rgba(244,242,237,0.4); padding: 20px clamp(28px,3.5vw,44px); font: 600 18px var(--sans); }
+  .btn-ghost:hover { background: rgba(244,242,237,0.08); border-color: rgba(244,242,237,0.7); }
+  .text-link { font: 700 15px var(--sans); border-bottom: 2px solid var(--ink); display: inline-block; padding-bottom: 2px; }
+  .text-link:hover { opacity: 0.75; }
+
+  /* Hero */
+  .hero { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px,5vw,72px); padding: clamp(12px,2vw,24px) clamp(20px,5vw,72px) clamp(40px,4vw,48px) clamp(20px,4vw,56px); }
+  .hero h1 { margin: 0; font: 900 clamp(54px,9vw,84px)/1 var(--sans); letter-spacing: -0.038em; }
+  .checks { margin: 28px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font: 400 clamp(16px,2vw,18px)/1.45 var(--sans); color: #333; max-width: 460px; }
+  .checks li { display: flex; gap: 12px; }
+  .checks li::before { content: "✓"; color: var(--green); font-weight: 700; }
+  .cta-note { margin: 12px 0 0; font: 400 13px var(--sans); color: #888; }
+  .hidden-item { background: var(--rust-wash); border: 1px solid var(--rust-line); border-radius: 12px; padding: 14px clamp(16px,2.5vw,22px); display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; color: var(--rust-deep); }
+  .hidden-item b { font: 700 17px var(--sans); }
+  .hidden-item span { font: 400 14px var(--sans); }
+
+  /* Stat band */
+  .stat { background: linear-gradient(rgba(24,21,17,0.9), rgba(24,21,17,0.9)), url('assets/labels-bg.jpg') center/cover; color: #f4f2ed; padding: clamp(56px,8vw,84px) clamp(24px,6vw,80px); text-align: center; }
+
+  /* Three-up problem grid */
+  .trio { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+  .trio > div { background: var(--paper); padding: clamp(36px,4vw,52px) clamp(24px,4vw,52px) clamp(40px,4vw,56px); }
+  .trio h3 { margin: 0; font: 800 13px var(--sans); letter-spacing: 0.08em; color: var(--rust); }
+  .trio p { margin: 14px 0 0; font: 400 17px/1.6 var(--sans); color: #444; }
+
+  /* Mission demo */
+  .label-card { flex: 1.1 1 340px; min-width: 0; background: #fff; border: 1px solid var(--sand-line); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 50px rgba(28,26,22,0.1); padding: 20px clamp(16px,2.5vw,24px) 28px; }
+  .tag { display: flex; align-items: center; gap: 8px; }
+  .tag i { font-style: normal; width: 22px; height: 22px; border-radius: 50%; color: #fff; display: inline-flex; align-items: center; justify-content: center; font: 700 12px var(--sans); }
+  .tag b { font: 800 12px var(--sans); letter-spacing: 0.08em; }
+  .label-text { font: 400 clamp(15px,2vw,17px)/1.55 'Archivo Narrow', 'Arial Narrow', sans-serif; color: #9a958c; }
+  .flavor-toggle { color: var(--ink); font-weight: 700; background: #f0ede6; border-radius: 6px; padding: 2px 8px; box-shadow: 0 0 0 1.5px var(--ink); white-space: nowrap; font-family: inherit; line-height: inherit; }
+  .flavor-toggle:hover { background: #e7e2d7; }
+  .popover { margin: 12px 0 6px; position: relative; background: #fff; border: 1px solid var(--sand-line); border-radius: 12px; padding: 12px 18px; width: fit-content; max-width: 100%; box-sizing: border-box; box-shadow: 0 20px 48px rgba(28,26,22,0.18); }
+  .popover::before { content: ""; position: absolute; top: -8px; left: 76px; width: 14px; height: 14px; background: #fff; border-left: 1px solid var(--sand-line); border-top: 1px solid var(--sand-line); transform: rotate(45deg); }
+  .popover dl { margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: clamp(14px,2vw,24px); row-gap: 8px; font: 400 14px var(--sans); align-items: center; }
+  .popover dt { font-weight: 700; }
+  .popover dd { margin: 0; color: #777; display: flex; align-items: center; gap: 8px; }
+  .info { position: relative; width: 15px; height: 15px; border-radius: 50%; border: 1px solid #c9c4ba; color: #9a958c; display: inline-flex; align-items: center; justify-content: center; font: 600 10px var(--sans); }
+  .info:hover, .info[aria-expanded="true"] { border-color: #777; color: #444; }
+  .info::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); right: -10px; background: var(--ink); color: #fff; font: 500 12px/1.3 var(--sans); padding: 6px 10px; border-radius: 6px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .12s; z-index: 2; }
+  .info:focus-visible::after, .info[aria-expanded="true"]::after { opacity: 1; }
+  @media (hover: hover) { .info:hover::after { opacity: 1; } }
+  .steps { flex: 1 1 300px; display: flex; flex-direction: column; gap: 22px; margin: 0; padding: 0; list-style: none; }
+  .steps li { display: flex; gap: 16px; }
+  .steps .n { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--green-deep); color: #f2efe6; display: inline-flex; align-items: center; justify-content: center; font: 700 14px var(--sans); }
+  .steps h3 { margin: 0; font: 700 18px var(--sans); }
+  .steps p { margin: 5px 0 0; font: 400 15px/1.5 var(--sans); color: #555; }
+
+  /* Take action cards */
+  .actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; }
+  .action { flex: 1 1 260px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 30px clamp(24px,3vw,32px); }
+  .action .big { font: 900 48px/1 var(--sans); color: var(--green); }
+  .action h3 { margin: 14px 0 0; font: 700 19px var(--sans); }
+  .action p { margin: 8px 0 16px; font: 400 16px/1.55 var(--sans); color: #555; }
+
+  /* Stories */
+  .stories { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; }
+  .story { border: 1px solid var(--sand-line); border-radius: 14px; overflow: hidden; background: #fff; }
+  .story .video { aspect-ratio: 9/13; background: repeating-linear-gradient(45deg,#ece9e2,#ece9e2 6px,#f4f2ec 6px,#f4f2ec 12px); display: flex; align-items: center; justify-content: center; position: relative; }
+  .story .play { width: 58px; height: 58px; border-radius: 50%; background: rgba(17,17,17,0.85); color: #fff; display: inline-flex; align-items: center; justify-content: center; font: 400 20px sans-serif; padding-left: 4px; box-sizing: border-box; }
+  .story .ph { position: absolute; bottom: 10px; left: 12px; font: 500 12px 'IBM Plex Mono', monospace; color: #8a857a; }
+  .story .body { padding: 20px 24px; }
+  .story h3 { margin: 0; font: 700 17px var(--sans); }
+  .story p { margin: 6px 0 0; font: 400 15px/1.5 var(--sans); color: #666; }
+
+  /* Coalition */
+  .members { margin: 32px 0 0; padding: 0; list-style: none; display: flex; justify-content: center; align-items: center; gap: clamp(12px,2vw,20px); flex-wrap: wrap; }
+  .members li { display: flex; align-items: center; gap: 12px; border: 1px solid #e2ded5; border-radius: 12px; padding: clamp(14px,2vw,18px) clamp(18px,3vw,28px); font: 600 16px var(--sans); }
+  .members .logo { width: 36px; height: 36px; border-radius: 8px; background: repeating-linear-gradient(45deg,#eee,#eee 4px,#f7f7f5 4px,#f7f7f5 8px); display: inline-block; }
+
+  /* Final CTA + footer */
+  .final { background: var(--night); color: #f4f2ed; padding: clamp(64px,9vw,100px) clamp(20px,5vw,80px) clamp(64px,9vw,96px); text-align: center; }
+  .site-footer { background: var(--night); color: #8b857a; border-top: 1px solid rgba(244,242,237,0.1); padding: 22px clamp(20px,5vw,56px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font: 400 13px var(--sans); }
+
+  /* Toast */
+  .toast { position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px); max-width: calc(100vw - 40px); box-sizing: border-box; background: var(--ink); color: #fff; padding: 14px 20px; border-radius: 10px; font: 500 15px/1.4 var(--sans); box-shadow: 0 12px 32px rgba(0,0,0,0.25); opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 20; text-align: center; }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="#top">Food Transparency Coalition</a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="#the-petition">Petition</a>
+    <a href="#coalition">About the Coalition</a>
+    <a href="#take-action" style="font-weight:700;">Take Action</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div style="flex:1 1 400px;">
+      <h1>Every.<br>Single.<br>Ingredient.</h1>
+      <ul class="checks">
+        <li>Full disclosure of all ingredients and processing aids</li>
+        <li>All information accessible via a free, public database</li>
+        <li>Protection for people with allergies, religious practices, and other dietary needs</li>
+      </ul>
+      <a class="btn" style="margin-top:32px;" href="#" data-link="sign">Sign the petition</a>
+      <p class="cta-note">Opens the FDA’s official comment page on Regulations.gov</p>
+    </div>
+
+    <div style="flex:1 1 320px; display:flex; flex-direction:column; align-items:center; min-width:0;" role="img" aria-label="Illustration: today’s label says “natural flavors,” which can legally hide ingredients like carmine, glycerin, and maltodextrin.">
+      <div style="width:100%; box-sizing:border-box; background:#fff; border:1.5px solid #e2ded5; border-radius:14px; padding:22px clamp(18px,3vw,28px);">
+        <div style="font:700 12px var(--sans); letter-spacing:0.12em; color:#999;">TODAY’S LABEL</div>
+        <div style="margin-top:10px; font:400 clamp(16px,2vw,19px)/1.7 'IBM Plex Mono',monospace; color:#333;">…sugar, citric acid, <span style="background:var(--rust-wash); border-bottom:3px solid var(--rust); padding:1px 6px; white-space:nowrap;">natural flavors</span>, salt…</div>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:center;" aria-hidden="true">
+        <div style="width:2px; height:18px; background:var(--rust);"></div>
+        <div style="background:var(--rust-deep); color:#fff; font:700 12px var(--sans); letter-spacing:0.08em; padding:7px 16px; border-radius:100px;">CAN LEGALLY HIDE</div>
+        <div style="width:2px; height:18px; background:var(--rust);"></div>
+        <div style="width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:9px solid var(--rust);"></div>
+      </div>
+      <div style="width:100%; display:flex; flex-direction:column; gap:10px;">
+        <div class="hidden-item"><b>carmine</b><span>made from insects · not vegan or kosher</span></div>
+        <div class="hidden-item"><b>glycerin</b><span>can be animal-derived · alpha-gal risk</span></div>
+        <div class="hidden-item"><b>maltodextrin</b><span>often corn-derived · corn allergy risk</span></div>
+        <div style="text-align:center; font:600 15px var(--sans); color:var(--rust-deep); padding-top:4px;">…and thousands of others</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stat band ────────────────────────────────────── -->
+  <section class="stat">
+    <p style="margin:0 auto; font:600 clamp(26px,4.5vw,44px)/1.25 var(--sans); letter-spacing:-0.02em; max-width:900px;"><span style="font:900 clamp(44px,8vw,76px)/1 var(--sans); letter-spacing:-0.03em; color:#c94f2e; vertical-align:-6px;">50%+</span> of grocery products in the U.S. contain at least one vague ingredient term.</p>
+    <p style="margin:22px 0 0; font:400 13px var(--sans); letter-spacing:0.04em; color:#8b857a;">SOURCE: FIG · <i>346,542 PRODUCTS ANALYZED</i></p>
+  </section>
+
+  <!-- ── Problem / solution ───────────────────────────── -->
+  <section class="trio">
+    <div>
+      <h3>A LEGAL BLIND SPOT</h3>
+      <p>Companies aren’t required to tell you what’s behind “natural flavors” — not on the label, not even if you ask.</p>
+    </div>
+    <div>
+      <h3>REAL HEALTH CONSEQUENCES</h3>
+      <p>33 million Americans have food allergies.<sup style="font-size:11px; color:#999;">1</sup> Every 10 seconds, a food allergy reaction sends someone to the ER.<sup style="font-size:11px; color:#999;">1</sup></p>
+      <p style="margin-top:12px; font-size:12px; line-height:1.5; color:#999;">1. FARE (Food Allergy Research &amp; Education), National Indicator Report on Food Allergy, 2026.</p>
+    </div>
+    <div>
+      <h3 style="color:var(--green);">OUR SOLUTION</h3>
+      <p>One FDA rule: every ingredient and processing aid, named in a free public database anyone can check.</p>
+    </div>
+  </section>
+
+  <!-- ── Mission / what the petition asks for ────────── -->
+  <section class="section cream" id="the-petition">
+    <p class="eyebrow">OUR MISSION</p>
+    <h2 class="h2" style="max-width:720px;">The future we’re fighting for.</h2>
+    <p class="lede" style="margin:16px 0 0; max-width:640px;">Imagine looking up any product and seeing <em>everything</em> that’s in it — in seconds:</p>
+
+    <div style="margin-top:40px; display:flex; flex-wrap:wrap; gap:clamp(32px,4vw,56px); align-items:center;">
+      <div class="label-card">
+        <div style="font:700 17px var(--sans);">Sunny Farms Strawberry Lemonade <span style="font:400 14px var(--sans); color:#999;">· 52 fl oz</span></div>
+
+        <div style="margin-top:16px;">
+          <div class="tag"><i style="background:var(--rust);" aria-hidden="true">✕</i><b style="color:var(--rust);">NOW</b></div>
+          <div style="margin-top:8px; border:1.5px solid #ddd; padding:12px clamp(12px,2vw,16px); background:#fafaf8;">
+            <p class="label-text" style="margin:0;"><strong style="font-weight:700;">INGREDIENTS:</strong> WATER, SUGAR, STRAWBERRY JUICE, LEMON JUICE, CITRIC ACID, NATURAL FLAVORS, COLOR, PECTIN.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="tag"><i style="background:var(--green);" aria-hidden="true">✓</i><b style="color:var(--green);">FUTURE</b></div>
+          <div style="margin-top:8px; border:1.5px solid #222; padding:12px clamp(12px,2vw,16px);">
+            <p class="label-text" style="margin:0; line-height:1.7;"><strong style="font-weight:700; color:#555;">INGREDIENTS:</strong> WATER, SUGAR, STRAWBERRY JUICE, LEMON JUICE, CITRIC ACID, <button type="button" class="flavor-toggle" aria-expanded="true" aria-controls="mission-popover">NATURAL FLAVORS <span aria-hidden="true">▾</span></button>, COLOR <strong style="font-weight:700; color:#111;">(CARMINE)</strong>, PECTIN.</p>
+            <div class="popover" id="mission-popover">
+              <dl>
+                <dt>Lemon oil</dt><dd>flavor <button type="button" class="info" data-tip="From: lemon peel" aria-label="Where lemon oil comes from">i</button></dd>
+                <dt>Glycerin</dt><dd>carrier <button type="button" class="info" data-tip="From: vegetable oils or animal fat" aria-label="Where glycerin comes from">i</button></dd>
+                <dt>Maltodextrin</dt><dd>carrier <button type="button" class="info" data-tip="From: corn, rice, or potato starch" aria-label="Where maltodextrin comes from">i</button></dd>
+              </dl>
+            </div>
+            <p class="label-text" style="margin:0;"><strong style="font-weight:700; color:#555;">PROCESSING AIDS:</strong> <strong style="font-weight:700; color:#111;">SILICON DIOXIDE, BENTONITE.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li><span class="n" aria-hidden="true">1</span><div><h3>Everything is disclosed</h3><p>Every ingredient and processing aid — including what’s inside “flavors,” “spices,” and “colorings.”</p></div></li>
+        <li><span class="n" aria-hidden="true">2</span><div><h3>Named so you can recognize it</h3><p>Common names, no aliases, no catch-alls.</p></div></li>
+        <li><span class="n" aria-hidden="true">3</span><div><h3>Kept up to date</h3><p>Refreshed whenever a recipe changes — on an FDA-set timetable.</p></div></li>
+        <li><span class="n" aria-hidden="true">4</span><div><h3>Free and public</h3><p>Searchable directly, or through the apps you already use.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── Take action ──────────────────────────────────── -->
+  <section class="section" id="take-action">
+    <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:24px 40px;">
+      <div>
+        <p class="eyebrow">JOIN THE FIGHT</p>
+        <h2 class="h2" style="max-width:560px;">Here’s how you can help.</h2>
+      </div>
+      <p class="lede" style="margin:0; max-width:480px;">Our coalition filed a formal citizen petition asking the FDA to require full disclosure of every ingredient and processing aid — published in a free public database.</p>
+    </div>
+    <div class="actions">
+      <div class="action">
+        <div class="big" aria-hidden="true">1</div>
+        <h3>Sign the petition</h3>
+        <p>Add your name in support of full ingredient disclosure. It takes 30 seconds.</p>
+        <a class="text-link" href="#" data-link="sign">Sign now</a>
+      </div>
+      <div class="action">
+        <div class="big" aria-hidden="true">2</div>
+        <h3>Share with friends &amp; family</h3>
+        <p>Send the petition to the people around you. Every signature helps show the importance.</p>
+        <button type="button" class="text-link" data-share>Share the link</button>
+      </div>
+      <div class="action">
+        <div class="big" aria-hidden="true">3</div>
+        <h3>Tell your story</h3>
+        <p>Post how vague ingredients affect you and your family with <strong>#EveryIngredient</strong>.</p>
+        <a class="text-link" href="#stories">See #EveryIngredient stories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stories ──────────────────────────────────────── -->
+  <section class="section cream" id="stories">
+    <p class="eyebrow">REAL STORIES</p>
+    <h2 class="h2" style="max-width:720px;">This is personal for millions of us.</h2>
+    <div class="stories">
+      <article class="story">
+        <div class="video"><span class="play" aria-hidden="true">▶</span><span class="ph">story video 1</span></div>
+        <div class="body"><h3>Living with alpha-gal syndrome</h3><p>When “natural flavors” can mean a trip to the ER.</p></div>
+      </article>
+      <article class="story">
+        <div class="video"><span class="play" aria-hidden="true">▶</span><span class="ph">story video 2</span></div>
+        <div class="body"><h3>Feeding a child with allergies</h3><p>Hours on the phone with manufacturers, every week.</p></div>
+      </article>
+      <article class="story">
+        <div class="video"><span class="play" aria-hidden="true">▶</span><span class="ph">story video 3</span></div>
+        <div class="body"><h3>Eating by your beliefs</h3><p>Keeping kosher shouldn’t require guesswork.</p></div>
+      </article>
+    </div>
+    <p style="margin:24px 0 0; font:400 16px var(--sans); color:#999;">Share yours with <strong style="color:#444;">#EveryIngredient</strong></p>
+  </section>
+
+  <!-- ── Coalition ────────────────────────────────────── -->
+  <section id="coalition" style="padding:clamp(48px,6vw,64px) clamp(20px,5vw,80px); text-align:center;">
+    <h2 style="margin:0; font:700 13px var(--sans); letter-spacing:0.12em; color:#999;">THE COALITION</h2>
+    <ul class="members">
+      <li><span class="logo" aria-hidden="true"></span>Fig: Food is Good</li>
+      <li><span class="logo" aria-hidden="true"></span>Alpha-gal Foundation</li>
+      <li><span class="logo" aria-hidden="true"></span>MenuTrinfo</li>
+      <li><span class="logo" aria-hidden="true"></span>Alpha-gal Alliance Action Fund</li>
+      <li><span class="logo" aria-hidden="true"></span>Allergen Free Cooking</li>
+    </ul>
+  </section>
+
+  <!-- ── Final CTA ────────────────────────────────────── -->
+  <section class="final" id="sign">
+    <p style="margin:0; font:700 13px var(--sans); letter-spacing:0.14em; color:#8b857a;">THE FDA IS LISTENING. MAKE IT COUNT.</p>
+    <h2 style="margin:20px 0 0; font:900 clamp(46px,10vw,92px)/1 var(--sans); letter-spacing:-0.04em;">Every. Single.<br>Ingredient.</h2>
+    <p style="margin:24px auto 0; font:400 clamp(17px,2.2vw,20px)/1.5 var(--sans); color:#b9b3a6; max-width:560px;">Every signature strengthens the case for full disclosure. Add yours — it takes 30 seconds.</p>
+    <div style="margin-top:40px; display:flex; flex-wrap:wrap; justify-content:center; gap:16px;">
+      <a class="btn btn-light" href="#" data-link="sign">Sign the petition</a>
+      <a class="btn btn-ghost" href="#" data-link="filing">Read the full FDA filing</a>
+    </div>
+    <p style="margin:44px 0 0; font:400 17px var(--sans); color:#8b857a;">Because we just want to know what we can eat.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>© <span data-year>2026</span> Food Transparency Coalition</span>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+<div class="toast" role="status" aria-live="polite"></div>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  var cfg = window.SITE_CONFIG || {};
+  var toastEl = document.querySelector('.toast');
+  var toastTimer;
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 4000);
+  }
+
+  // Petition + filing links (set in config.js)
+  document.querySelectorAll('[data-link]').forEach(function (a) {
+    var url = cfg[a.getAttribute('data-link') + 'Url'];
+    if (url) {
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+    } else {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        toast('The petition opens for public signatures once the FDA posts it. Check back soon!');
+      });
+    }
+  });
+
+  // Share button: native share sheet on phones, copy link on desktop
+  document.querySelectorAll('[data-share]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var data = {
+        title: 'Every. Single. Ingredient.',
+        text: 'Tell the FDA: every ingredient in our food should be disclosed.',
+        url: location.origin + '/'
+      };
+      if (navigator.share) {
+        navigator.share(data).catch(function () {});
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(data.url).then(
+          function () { toast('Link copied. Paste it anywhere to share.'); },
+          function () { toast(data.url); }
+        );
+      } else {
+        toast(data.url);
+      }
+    });
+  });
+
+  // "Natural flavors" reveal
+  var toggle = document.querySelector('.flavor-toggle');
+  var pop = document.getElementById('mission-popover');
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.querySelector('span').textContent = open ? '▸' : '▾';
+    pop.hidden = open;
+  });
+
+  // Ingredient source tooltips (tap-friendly)
+  var infos = document.querySelectorAll('.info');
+  infos.forEach(function (b) {
+    b.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var was = b.getAttribute('aria-expanded') === 'true';
+      infos.forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+      b.setAttribute('aria-expanded', String(!was));
+    });
+  });
+  document.addEventListener('click', function () {
+    infos.forEach(function (o) { o.setAttribute('aria-expanded', 'false'); });
+  });
+
+  document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+})();
+</script>
+</body>
+</html>
