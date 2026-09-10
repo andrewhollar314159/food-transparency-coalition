@@ -44,6 +44,15 @@ sideways scrolling.
 
 ## How I'd like changes handled
 
+**Pull the latest `main` first.** Tyler and I both edit this site, sometimes
+straight through GitHub's web editor, so `main` may have moved since you last
+looked. Run `git pull origin main` before starting a change — don't build on a
+stale copy.
+
+**Push straight to `main`.** That's the default. Don't park changes on a branch
+or open a pull request unless I've asked for a preview. Pushing to `main` puts
+it live within about 30 seconds, so make sure it's right before you push.
+
 When I ask for a change: make it, commit it with a plain-English message
 (what changed, not jargon), push it, and then tell me in one or two sentences
 what you changed. No long summaries unless I ask for them.
