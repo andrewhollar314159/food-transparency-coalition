@@ -73,7 +73,8 @@
 
   /* Hero */
   .hero { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px,5vw,72px); padding: clamp(12px,2vw,24px) clamp(20px,5vw,72px) clamp(40px,4vw,48px) clamp(20px,4vw,56px); }
-  .hero h1 { margin: 0; font: 900 clamp(54px,9vw,84px)/1 var(--sans); letter-spacing: -0.038em; }
+  .hero h1 { margin: 0; font: 900 clamp(44px,7vw,72px)/1 var(--sans); letter-spacing: -0.038em; }
+  .hero h1 span { color: var(--rust); }
   .checks { margin: 28px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font: 400 clamp(16px,2vw,18px)/1.45 var(--sans); color: #333; max-width: 460px; }
   .checks li { display: flex; gap: 12px; }
   .checks li::before { content: "✓"; color: var(--green); font-weight: 700; }
@@ -167,7 +168,7 @@
   <!-- ── Hero ─────────────────────────────────────────── -->
   <section class="hero">
     <div style="flex:1 1 400px;">
-      <h1>Every.<br>Single.<br>Ingredient.</h1>
+      <h1>Demand.<br><span>Every. Single. Ingredient.</span></h1>
       <ul class="checks">
         <li>Full disclosure of all ingredients and processing aids</li>
         <li>All information accessible via a free, public database</li>
