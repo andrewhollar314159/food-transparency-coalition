@@ -44,8 +44,9 @@
   .callout p { margin: 0; color: var(--ink); font-weight: 500; }
 
   .lede { margin: 18px 0 0; font: 500 clamp(19px,2.6vw,23px)/1.5 var(--sans); color: var(--ink); }
-  .members { margin: 20px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
-  .members li { display: flex; }
+  .members { margin: 20px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .members li { display: flex; width: min(100%, 380px); }
+  .members li > a { flex: 1; }
   .members li > a { display: flex; align-items: center; gap: 12px; border: 1px solid #e2ded5; border-radius: 12px; padding: 14px 20px; font: 600 16px var(--sans); background: #fff; transition: border-color 0.15s ease; }
   .members li > a:hover, .members li > a:focus-visible { opacity: 1; border-color: var(--green); }
   .members .logo { flex: none; width: 36px; height: 36px; border-radius: 8px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--sand-line); display: inline-flex; align-items: center; justify-content: center; overflow: hidden; font: 800 15px var(--sans); color: var(--green); }
