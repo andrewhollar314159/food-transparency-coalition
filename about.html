@@ -88,13 +88,17 @@
     <li><a href="https://www.allergenfreecooking.com/" target="_blank" rel="noopener"><span class="logo" aria-hidden="true"><img src="/assets/logos/allergen-free-cooking.ico" alt="" width="36" height="36" loading="lazy" decoding="async"></span>Allergen Free Cooking</a></li>
   </ul>
 
-  <div class="cta"><a class="btn" href="/#sign">Sign the petition</a></div>
+  <div class="cta" data-petition hidden><a class="btn" href="/#sign">Sign the petition</a></div>
 </main>
 <footer class="site-footer">
   <span>© <span data-year>2026</span> Food Transparency Coalition</span>
   <a href="/">Back to home</a>
 </footer>
+<script src="config.js"></script>
 <script>
+  if ((window.SITE_CONFIG || {}).showPetition) {
+    document.querySelectorAll('[data-petition]').forEach(function (el) { el.hidden = false; });
+  }
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 </script>
 </body>

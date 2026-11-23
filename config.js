@@ -12,6 +12,10 @@
  *  "opening soon" message instead of a broken link.
  */
 window.SITE_CONFIG = {
+  // Show the "Sign the petition" buttons and the closing sign-up section.
+  // Leave false until the petition is posted, then switch to true.
+  showPetition: false,
+
   // The "Comment" page for the petition document, e.g.
   // "https://www.regulations.gov/commenton/FDA-2026-P-1234-0001"
   signUrl: "",

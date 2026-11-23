@@ -175,8 +175,10 @@
         <li>All information accessible via a free, public database</li>
         <li>Protection for people with allergies, religious practices, and other dietary needs</li>
       </ul>
-      <a class="btn" style="margin-top:32px;" href="#" data-link="sign">Sign the petition</a>
-      <p class="cta-note">Opens the FDA’s official comment page on Regulations.gov</p>
+      <div data-petition hidden>
+        <a class="btn" style="margin-top:32px;" href="#" data-link="sign">Sign the petition</a>
+        <p class="cta-note">Opens the FDA’s official comment page on Regulations.gov</p>
+      </div>
     </div>
 
     <div style="flex:1 1 320px; display:flex; flex-direction:column; align-items:center; min-width:0;" role="img" aria-label="Illustration: today’s label says “natural flavors,” which can legally hide ingredients like carmine, glycerin, and maltodextrin.">
@@ -284,7 +286,7 @@
   </section>
 
   <!-- ── Final CTA ────────────────────────────────────── -->
-  <section class="final" id="sign">
+  <section class="final" id="sign" data-petition hidden>
     <p style="margin:0; font:700 13px var(--sans); letter-spacing:0.14em; color:#8b857a;">THE FDA IS LISTENING. MAKE IT COUNT.</p>
     <h2 style="margin:20px 0 0; font:900 clamp(46px,10vw,92px)/1 var(--sans); letter-spacing:-0.04em;">Every. Single.<br>Ingredient.</h2>
     <p style="margin:24px auto 0; font:400 clamp(17px,2.2vw,20px)/1.5 var(--sans); color:#b9b3a6; max-width:560px;">Every signature strengthens the case for full disclosure. Add yours — it takes 30 seconds.</p>
@@ -314,6 +316,11 @@
     toastEl.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 4000);
+  }
+
+  // Petition sign-up content stays hidden until showPetition is true in config.js
+  if (cfg.showPetition) {
+    document.querySelectorAll('[data-petition]').forEach(function (el) { el.hidden = false; });
   }
 
   // Petition + filing links (set in config.js)
