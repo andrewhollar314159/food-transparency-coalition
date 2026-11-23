@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | Food Transparency Coalition</title>
+<meta name="description" content="The Food Transparency Coalition is a coalition of nonprofits and consumer advocates fighting for your right to know what is in your food.">
+<meta name="theme-color" content="#0f1440">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #111; --paper: #fcfcfa; --cream: #f7f4ee; --night: #0f1440;
+    --green: #1b2475; --rust: #3f6fc0;
+    --line: #e5e5e0; --sand-line: #e3ddd1;
+    --sans: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.75; }
+  :focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 2px; }
+  .skip { position: absolute; left: -9999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 16px; z-index: 10; font: 700 14px var(--sans); }
+  .skip:focus { left: 8px; }
+
+  .site-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px 24px; padding: clamp(16px,3vw,26px) clamp(20px,5vw,56px); }
+  .brand { display: block; line-height: 0; }
+  .brand img { display: block; height: clamp(48px,6.5vw,72px); width: auto; max-width: 100%; mix-blend-mode: multiply; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 12px clamp(18px,3vw,36px); font: 400 15px var(--sans); }
+
+  .doc { max-width: 720px; margin: 0 auto; padding: clamp(24px,5vw,56px) clamp(20px,5vw,56px) clamp(56px,8vw,96px); }
+  .eyebrow { font: 700 13px var(--sans); letter-spacing: 0.12em; color: var(--green); margin: 0; }
+  .doc h1 { margin: 12px 0 0; font: 900 clamp(36px,6vw,56px)/1.05 var(--sans); letter-spacing: -0.03em; }
+  .updated { margin: 14px 0 0; font: 400 14px var(--sans); color: #777; }
+  .doc h2 { margin: 44px 0 0; font: 800 13px var(--sans); letter-spacing: 0.08em; color: var(--rust); text-transform: uppercase; }
+  .doc p { margin: 14px 0 0; font: 400 clamp(16px,2vw,17px)/1.65 var(--sans); color: #333; }
+  .callout { margin-top: 32px; background: var(--cream); border: 1px solid var(--sand-line); border-radius: 12px; padding: 18px clamp(18px,3vw,24px); }
+  .callout p { margin: 0; color: var(--ink); font-weight: 500; }
+
+  .lede { margin: 18px 0 0; font: 500 clamp(19px,2.6vw,23px)/1.5 var(--sans); color: var(--ink); }
+  .members { margin: 20px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+  .members li { display: flex; }
+  .members li > a { display: flex; align-items: center; gap: 12px; border: 1px solid #e2ded5; border-radius: 12px; padding: 14px 20px; font: 600 16px var(--sans); background: #fff; transition: border-color 0.15s ease; }
+  .members li > a:hover, .members li > a:focus-visible { opacity: 1; border-color: var(--green); }
+  .members .logo { flex: none; width: 36px; height: 36px; border-radius: 8px; background: var(--cream); box-shadow: inset 0 0 0 1px var(--sand-line); display: inline-flex; align-items: center; justify-content: center; overflow: hidden; font: 800 15px var(--sans); color: var(--green); }
+  .members .logo::before { content: attr(data-mark); }
+  .members .logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .cta { margin-top: 48px; }
+  .btn { display: inline-block; font: 700 16px var(--sans); padding: 17px 38px; background: var(--ink); color: #fff; }
+  .btn:hover { opacity: 1; background: #333; }
+  .site-footer { background: var(--night); color: #8b857a; border-top: 1px solid rgba(244,242,237,0.1); padding: 22px clamp(20px,5vw,56px); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font: 400 13px var(--sans); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="/"><img src="assets/logo.jpg" alt="Food Transparency Coalition home" width="1798" height="354"></a>
+  <nav class="site-nav" aria-label="Main">
+    <a href="/#the-petition">Petition</a>
+    <a href="/about.html">About Us</a>
+    <a href="/#take-action" style="font-weight:700;">Take Action</a>
+  </nav></header>
+
+<main id="main" class="doc">
+  <p class="eyebrow">THE FOOD TRANSPARENCY COALITION</p>
+  <h1>About Us</h1>
+  <p class="lede">We are a coalition of nonprofits and consumer advocates fighting for your right to know what is in your food.</p>
+
+  <h2>Our Vision</h2>
+  <p>We envision a future US food system that is fully transparent. No hidden ingredients. No unlisted incidental additives. A food system where anyone can easily access every single ingredient and additive used in foods without having to jump through hoops. Consumers deserve to know all the details about what they are putting in their bodies, both for safety and personal choice.</p>
+
+  <h2>Our Mission</h2>
+  <p>To advance policy solutions that increase transparency in the US food system and improve safety and freedom of choice for consumers.</p>
+
+  <h2>Coalition Members</h2>
+  <!-- Keep this list in step with the coalition list on index.html. -->
+  <ul class="members">
+    <li><a href="https://foodisgood.com/" target="_blank" rel="noopener"><span class="logo" aria-hidden="true"><img src="/assets/logos/fig.png" alt="" width="36" height="36" loading="lazy" decoding="async"></span>Fig: Food is Good</a></li>
+    <li><a href="https://www.alphagalfoundation.org/" target="_blank" rel="noopener"><span class="logo" data-mark="α" aria-hidden="true"></span>Alpha-gal Foundation</a></li>
+    <li><a href="https://menutrinfo.com/" target="_blank" rel="noopener"><span class="logo" data-mark="M" aria-hidden="true"></span>MenuTrinfo</a></li>
+    <li><a href="https://alphagalaction.org/" target="_blank" rel="noopener"><span class="logo" data-mark="α" aria-hidden="true"></span>Alpha-gal Alliance Action Fund</a></li>
+    <li><a href="https://www.allergenfreecooking.com/" target="_blank" rel="noopener"><span class="logo" data-mark="A" aria-hidden="true"></span>Allergen Free Cooking</a></li>
+  </ul>
+
+  <div class="cta"><a class="btn" href="/#take-action">Take action</a></div>
+</main>
+<footer class="site-footer">
+  <span>© <span data-year>2026</span> Food Transparency Coalition</span>
+  <a href="/">Back to home</a>
+</footer>
+<script>
+  document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+</script>
+</body>
+</html>
